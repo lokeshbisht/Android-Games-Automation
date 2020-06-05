@@ -43,12 +43,11 @@ while True:
         if not black and (r + g + b) == 0:
             black = not black
             transitions.append(i)
-            break
 
-    start, target1 = transitions
+    start, target1, target2 = transitions
     gap = target1 - start
-    #target = target2 - target1
-    distance = (gap + 10) * 1.1
+    target = target2 - target1
+    distance = (gap + target) * 1.5
 
     print(f'transition points: {transitions}, distance: {distance}')
 
