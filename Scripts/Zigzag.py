@@ -23,7 +23,7 @@ while True:
 
     pixels = [list(i[:3]) for i in image[460]]
 
-    print(pixels)
+    #print(pixels)
 
     pl = False
     for i, pixel in enumerate(pixels):

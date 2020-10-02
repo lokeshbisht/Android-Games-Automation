@@ -21,7 +21,7 @@ while True:
     image = Image.open('screenshots/screen.png')
     image = numpy.array(image, dtype=numpy.uint8)
 
-    pixels = [list(i[:3]) for i in image[1000]]
+    pixels = [list(i[:3]) for i in image[1400]]
 
     transitions = []
     ignore = True
@@ -37,17 +37,19 @@ while True:
 
         if black and (r + g + b) != 0:
             black = not black
+            print(i)
             transitions.append(i)
             continue
 
         if not black and (r + g + b) == 0:
             black = not black
             transitions.append(i)
+            continue
 
     start, target1, target2 = transitions
     gap = target1 - start
     target = target2 - target1
-    distance = (gap + target) * 1.5
+    distance = (gap + target) * 1.3
 
     print(f'transition points: {transitions}, distance: {distance}')
 

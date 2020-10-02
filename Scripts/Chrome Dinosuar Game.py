@@ -21,7 +21,7 @@ while True:
     image = Image.open('screenshots/screen.png')
     image = numpy.array(image, dtype=numpy.uint8)
 
-    pixels = [list(i[:3]) for i in image[460]]
+    pixels = [list(i[:3]) for i in image[470]]
 
     print(pixels)
 
@@ -29,12 +29,11 @@ while True:
     for i, pixel in enumerate(pixels):
         r, g, b = [int(i) for i in pixel]
 
-        if r == 83 :
+        if r == 83 and i >= 336:
             print(r)
             print(g)
             print(b)
             print(i)
-            #stri = 'input touchscreen swipe' + str(i) + str(460) + str(i) + str(460) + '10'
             device.shell(f'input touchscreen swipe 300 460 300 460 10')
             break
 
